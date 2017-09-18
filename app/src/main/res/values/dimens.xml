@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="bigMargin">30dp</dimen>
+    <dimen name="text_size_heading">20sp</dimen>
+    <dimen name="score_margin">65dp</dimen>
+    <dimen name="small_margin">5dp</dimen>
+    <dimen name="textSizeScore">40sp</dimen>
+    <dimen name="minusbuttonMargin">10dp</dimen>
+    <dimen name="plusButtonPadding">24dp</dimen>
+    <dimen name="padding">24dp</dimen>
+    <dimen name="label_margin">48dp</dimen>
+    <dimen name="big_top_margin">48dp</dimen>
+    <dimen name="text_size_label">15sp</dimen>
+</resources>

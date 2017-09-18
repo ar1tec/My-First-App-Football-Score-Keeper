@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/football"
+    android:padding="@dimen/margin"
+    tools:context="com.example.mansi.footballscorekeeper.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/bigMargin"
+                android:text="@string/home_team"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_heading"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/teamA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/score_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:text="@string/homeTeamDefaultText"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/textSizeScore" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/minusHome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/minusbuttonMargin"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:onClick="subHome"
+                    android:text="@string/minusButtonText" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-8dp"
+                    android:layout_weight="1"
+                    android:onClick="addHome"
+                    android:paddingRight="@dimen/plusButtonPadding"
+                    android:text="@string/plusButtonText" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/bigMargin"
+                android:text="@string/away_team"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_heading"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/teamB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/score_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:text="@string/awayTeamDefaultScore"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/textSizeScore" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/minusAway"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/minusbuttonMargin"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:onClick="subAway"
+                    android:paddingLeft="@dimen/padding"
+                    android:text="@string/minusButtonText" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-8dp"
+                    android:layout_weight="1"
+                    android:onClick="addAway"
+                    android:paddingRight="@dimen/padding"
+                    android:text="@string/plusButtonText" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/root"
+        android:layout_marginLeft="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:background="@android:color/darker_gray"
+        android:onClick="reset"
+        android:text="@string/clear" />
+
+    <LinearLayout
+        android:id="@+id/first_half_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clear_button"
+        android:layout_marginLeft="@dimen/label_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/_1st_half"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/start_first_half"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="startFirstHalf"
+            android:text="@string/start" />
+
+        <Button
+            android:id="@+id/end_first_half"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="endFirstHalf"
+            android:text="@string/end" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second_half_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/first_half_layout"
+        android:layout_marginLeft="@dimen/label_margin"
+        android:layout_marginTop="-8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-2dp"
+            android:layout_weight="1"
+            android:text="@string/_2nd_half"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/start_second_half"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="startSecondHalf"
+            android:text="@string/start" />
+
+        <Button
+            android:id="@+id/end_game"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="endGame"
+            android:text="@string/end" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tags_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/second_half_layout"
+        android:layout_marginLeft="@dimen/bigMargin"
+        android:layout_marginTop="@dimen/big_top_margin"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_1st_half"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_label"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/end_half"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_label"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/start_2nd_half"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_label"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/end_game"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_label"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tags_layout"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_toRightOf="@+id/tags_layout"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/first_half_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_00_00"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_label" />
+
+        <TextView
+            android:id="@+id/end_half_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/_00_00"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_label" />
+
+        <TextView
+            android:id="@+id/second_half_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/_00_00"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_label" />
+
+        <TextView
+            android:id="@+id/end_game_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/_00_00"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_label" />
+    </LinearLayout>
+</RelativeLayout>

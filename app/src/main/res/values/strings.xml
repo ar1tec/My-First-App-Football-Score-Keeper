@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FootBall Score Keeper</string>
+    <string name="home_team">Home Team</string>
+    <string name="homeTeamDefaultText">0</string>
+    <string name="minusButtonText">-</string>
+    <string name="plusButtonText">+</string>
+    <string name="away_team">Away Team</string>
+    <string name="awayTeamDefaultScore">0</string>
+    <string name="clear">Clear</string>
+    <string name="_1st_half">1st Half</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="_2nd_half">2nd Half</string>
+    <string name="start_1st_half">Start 1st half:</string>
+    <string name="end_half">End half:</string>
+    <string name="start_2nd_half">Start 2nd half:</string>
+    <string name="end_game">End game:</string>
+    <string name="_00_00">00:00</string>
+</resources>
